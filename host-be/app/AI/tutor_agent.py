@@ -1,7 +1,7 @@
 # Agent for the analysis and tutoring of students based on their profiles
 
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
 
 class EvaluatorAgent:
     def __init__(self):

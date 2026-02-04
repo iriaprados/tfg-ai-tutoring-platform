@@ -1,7 +1,7 @@
 # Agent for planning the tutoring strategy based on student level determinated by EvaluatorAgent
 
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
 
 class PlannerAgent:
     def __init__(self):

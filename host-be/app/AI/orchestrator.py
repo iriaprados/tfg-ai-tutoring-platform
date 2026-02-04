@@ -1,8 +1,8 @@
 # Unified the agents on a multi-agent system 
 
-from app.AI.agents.evaluator_agent import EvaluatorAgent
-from app.AI.agents.planner_agent import PlannerAgent
-from app.AI.agents.tutor_agent import TutorAgent
+from app.AI.evaluator_agent import EvaluatorAgent
+from app.AI.planner_agent import PlannerAgent
+from app.AI.tutor_agent import TutorAgent
 
 class ITFOrchestrator:
     def __init__(self):

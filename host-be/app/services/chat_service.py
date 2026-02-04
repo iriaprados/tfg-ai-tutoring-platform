@@ -1,3 +1,11 @@
+# Connects to the database and handles chat-related operations
+
+from app.AI.orchestrator import ITFOrchestrator
+
+orchestrator = ITFOrchestrator() # Orchestrator from the multi-agent system 
+
+
 def process_message(message: str):
-    # IA real vendrá después
-    return f"He recibido tu mensaje: '{message}'. Vamos a trabajar en ello."
+    result = orchestrator.process(message)
+    return result["response"]
+
