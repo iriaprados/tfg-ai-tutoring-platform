@@ -1,18 +1,27 @@
-# Agent for the analysis and tutoring of students based on their profiles
+# Agent for tutoring students based on a given strategy
 
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 
-class EvaluatorAgent:
+class TutorAgent:
     def __init__(self):
-        self.llm = ChatOpenAI(temperature=0) # Configuration of the language model
+        self.llm = ChatOpenAI(temperature=0.7)
 
         self.prompt = ChatPromptTemplate.from_template(
-            # Poner aqui el mensaje del alumno 
+            """
+            Actúa como un tutor paciente y claro.
+            Estrategia: {strategy}
+
+            Pregunta del alumno:
+            {message}
+            """
         )
 
-    def evaluate(self, message: str) -> str:
+    def explain(self, message: str, strategy: str) -> str:
         response = self.llm(
-            self.prompt.format_messages(message=message)
+            self.prompt.format_messages(
+                message=message,
+                strategy=strategy
+            )
         )
-        return response.content.lower()
+        return response.content

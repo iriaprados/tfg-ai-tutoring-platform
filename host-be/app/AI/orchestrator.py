@@ -1,4 +1,4 @@
-# Unified the agents on a multi-agent system 
+# Orchestrator for the multi-agent tutoring system
 
 from app.AI.evaluator_agent import EvaluatorAgent
 from app.AI.planner_agent import PlannerAgent
@@ -10,7 +10,7 @@ class ITFOrchestrator:
         self.planner = PlannerAgent()
         self.tutor = TutorAgent()
 
-    def process(self, message: str):
+    def process(self, message: str): # Process the message through the multi-agent system
         level = self.evaluator.evaluate(message)
         strategy = self.planner.plan(level)
         response = self.tutor.explain(message, strategy)

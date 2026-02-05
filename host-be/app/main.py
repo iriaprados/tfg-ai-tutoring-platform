@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-# from app.routers import user, session, chat 
+from app.routes import user, session, chat 
 
 app = FastAPI(
     title="TFG AI Tutoring Platform",
@@ -7,9 +7,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# app.include_router(users.router)
-# app.include_router(sessions.router)
-# app.include_router(chat.router)
+app.include_router(user.router)
+app.include_router(session.router)
+app.include_router(chat.router)
 
 
 @app.get("/")
